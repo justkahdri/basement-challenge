@@ -1,10 +1,11 @@
 {
-  "name": "next-typescript",
+  "name": "b.challenge",
   "version": "1.0.0",
-  "description": "A minimalist boilerplate — Next.js with TypeScript.",
-  "repository": "https://github.com/basementstudio/next-typescript",
-  "author": "basement.studio",
-  "private": true,
+  "description": "Landing page for e-commerce site, made with basement boilerplate — Next.js with TypeScript.",
+  "repository": "https://github.com/justkahdri/basement-challenge",
+  "author": "justkahdri",
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "prepare": "husky install",
     "dev": "next",
@@ -77,7 +78,8 @@
     "arrowParens": "always",
     "tabWidth": 2,
     "printWidth": 80,
-    "trailingComma": "none"
+    "trailingComma": "none",
+    "endOfLine": "auto"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -149,7 +151,10 @@
         }
       ],
       "prettier/prettier": [
-        "warn"
+        "warn",
+        {
+          "endOfLine": "auto"
+        }
       ],
       "@typescript-eslint/explicit-module-boundary-types": "off"
     },
