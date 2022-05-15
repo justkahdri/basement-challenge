@@ -1,13 +1,14 @@
 import { Meta } from '~/components/common/meta'
-import Welcome from '~/components/common/welcome'
 import { PageLayout } from '~/components/layout/page'
+import Hero from '~/components/sections/hero'
 
 const HomePage = () => {
   return (
     <PageLayout>
       <Meta />
 
-      <Welcome />
+      <header>basement</header>
+      <Hero />
     </PageLayout>
   )
 }

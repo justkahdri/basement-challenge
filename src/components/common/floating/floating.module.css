@@ -1,0 +1,39 @@
+.floating {
+  --floating-size: 80px;
+  --floating-time: 12s;
+
+  height: var(--floating-size);
+  width: var(--floating-size);
+  overflow: visible;
+  animation: floating var(--floating-time) infinite linear alternate;
+}
+
+.floating:nth-child(even) {
+  animation-delay: calc(var(--floating-time) * -0.5);
+}
+
+.floating svg {
+  fill: black;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(
+        var(--floating-size),
+        calc(var(--floating-size) * -0.7)
+      )
+      rotate(180deg);
+  }
+
+  100% {
+    transform: translate(
+        calc(var(--floating-size) * -1.6),
+        calc(var(--floating-size) * -1.2)
+      )
+      rotate(360deg);
+  }
+}
