@@ -229,6 +229,14 @@
         }
       ],
       "declaration-block-trailing-semicolon": null,
+      "declaration-block-no-redundant-longhand-properties": [
+        true,
+        {
+          "ignoreShorthands": [
+            "/grid-template/"
+          ]
+        }
+      ],
       "no-descending-specificity": null,
       "number-leading-zero": null,
       "length-zero-no-unit": null,
