@@ -1,0 +1,106 @@
+.card {
+  --flex-gap: 0.8rem;
+  --large-font-size: 2.6rem;
+  --std-font-size: 1.6rem;
+
+  display: grid;
+  grid-template-columns: 33% 1fr 20%;
+  grid-template-rows: min-content 1fr repeat(3, min-content);
+  padding: 16px;
+  gap: 6px 16px;
+  grid-template-areas:
+    'image title title'
+    'image description description'
+    'image count count'
+    'image sizes price'
+    'image sizes price';
+  border: 1px solid white;
+  height: 220px;
+  width: 100%;
+  font-size: var(--std-font-size);
+  line-height: normal;
+}
+
+.cover {
+  grid-area: image;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, #1d1d1d 0%, rgb(21 21 21 / 0) 100%);
+}
+
+.name {
+  grid-area: title;
+  font-size: var(--large-font-size);
+}
+
+.description {
+  grid-area: description;
+  color: var(--grey);
+}
+
+.count-container {
+  display: flex;
+  align-items: center;
+  gap: var(--flex-gap);
+  grid-area: count;
+}
+
+.count-input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  border: 1px solid white;
+  border-radius: 20px;
+  height: 30px;
+}
+
+.count-input-group button {
+  font-size: var(--std-font-size);
+}
+
+.count-input {
+  background: transparent;
+  width: 30px;
+  text-align: center;
+
+  /* border: 1px solid white;
+  border-radius: 20px;
+  height: 30px; */
+}
+
+.sizes {
+  grid-area: sizes;
+  display: flex;
+  gap: var(--flex-gap);
+  align-items: center;
+}
+
+.sizes input {
+  display: none;
+}
+
+.sizes label {
+  transition: 0s;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.sizes input:checked + label {
+  border: 1px solid white;
+}
+
+.price {
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  grid-area: price;
+  font-size: 2.2rem;
+  text-align: end;
+}
