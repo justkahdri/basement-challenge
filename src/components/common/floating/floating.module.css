@@ -1,6 +1,6 @@
 .floating {
   --floating-size: 80px;
-  --floating-time: 12s;
+  --floating-time: 14s;
 
   height: var(--floating-size);
   width: var(--floating-size);
@@ -9,7 +9,7 @@
 }
 
 .floating:nth-child(even) {
-  animation-delay: calc(var(--floating-time) * -0.5);
+  animation-delay: calc(var(--floating-time) * -0.8);
 }
 
 .floating svg {

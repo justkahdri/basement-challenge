@@ -11,13 +11,13 @@
 
 /* HEADING */
 .title {
-  margin-top: 9vw;
+  margin-top: 5vw;
   font-size: var(--full-wide-size);
   text-align: center;
   line-height: 9vw;
 }
 
-.outline {
+.title span {
   -webkit-text-stroke: 1px white;
   color: transparent;
   position: relative;
@@ -26,8 +26,8 @@
   gap: 1vw;
 }
 
-.outline::before,
-.outline::after {
+.title span::before,
+.title span::after {
   line-height: normal;
   -webkit-text-stroke: 0;
   border: 1px solid white;
@@ -38,11 +38,11 @@
   color: white;
 }
 
-.outline::before {
+.title span::before {
   content: 'EST';
 }
 
-.outline::after {
+.title span::after {
   content: '2K19';
 }
 
@@ -63,7 +63,7 @@
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 18s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
 @keyframes marquee {

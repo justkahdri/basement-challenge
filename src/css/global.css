@@ -6,6 +6,7 @@
     ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
   --font-body: 'Grotesque', var(--font-system), sans-serif;
   --inspect-color: #f00;
+  --grey: #999;
   --full-wide-size: 15vw;
 
   cursor: crosshair;
@@ -40,4 +41,35 @@ body:not(.user-is-tabbing) input:focus,
 body:not(.user-is-tabbing) select:focus,
 body:not(.user-is-tabbing) textarea:focus {
   outline: none;
+}
+
+* {
+  transition: color 0.25s, border 0.25s;
+}
+
+button {
+  font-size: 1.2rem;
+  cursor: crosshair;
+}
+
+label {
+  cursor: inherit;
+  user-select: none;
+}
+
+/* Special class for outline text */
+.outline {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
+
+input[type='number'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }

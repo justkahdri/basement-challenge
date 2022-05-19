@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <h1 className={styles.title}>
-        BASEMENT <span className={styles.outline}>SUPPLY</span>
+        BASEMENT <span className="outline">SUPPLY</span>
       </h1>
       <div className={styles.marquee_box}>
         <p className={styles.track}>{marqueeContent}</p>
