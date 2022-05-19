@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  position: relative;
+  padding: 1.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header h2 {
+  font-size: 2rem;
+}
+
+.header > figure {
+  height: 2rem;
+  width: 3rem;
+  position: relative;
+  flex: 1;
+}
