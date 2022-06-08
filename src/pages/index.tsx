@@ -1,6 +1,5 @@
 import { Meta } from '~/components/common/meta'
 import { PageLayout } from '~/components/layout/page'
-import Header from '~/components/sections/header'
 import Hero from '~/components/sections/hero'
 
 const HomePage = () => {
@@ -8,7 +7,6 @@ const HomePage = () => {
     <PageLayout>
       <Meta />
 
-      <Header />
       <Hero />
     </PageLayout>
   )

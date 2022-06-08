@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Floating from '../common/floating'
+import Floating from '../../common/floating'
 import styles from './hero.module.css'
 
 const Hero = () => {

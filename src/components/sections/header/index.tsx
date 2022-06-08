@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-import CartDrawer from '../common/cartDrawer'
+import CartDrawer from '../../common/cartDrawer'
 import styles from './header.module.css'
 
 const Header = () => {

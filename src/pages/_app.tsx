@@ -14,7 +14,6 @@ import {
 } from '~/lib/constants'
 import { GAScripts, useAppGA } from '~/lib/ga'
 
-// TODO delete this basement log if not a basement project.
 if (isProd && isClient) {
   // eslint-disable-next-line no-console
   console.log(basementLog)
