@@ -7,7 +7,7 @@
   --font-body: 'Grotesque', var(--font-system), sans-serif;
   --inspect-color: #f00;
   --grey: #999;
-  --full-wide-size: 15vw;
+  --full-wide-size: 14.4vw;
 
   cursor: crosshair;
 
@@ -60,7 +60,7 @@ label {
 /* Special class for outline text */
 .outline {
   -webkit-text-stroke: 1px white;
-  color: transparent;
+  color: black;
 }
 
 input[type='number'] {

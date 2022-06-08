@@ -23,17 +23,16 @@ export const siteOrigin = siteURL.origin
 // you can delete it if not needed.
 export const basementLog = `
 
-   ██╗
-   ██║
-   ██████╗
-   ██╔══██╗  ██╗
-   ██████╔╝  ██╝
-   ╚═════╝   
+   __  ___      ___       __    __   _______  .______     __  
+  |  |/  /     /   \\     |  |  |  | |       \\ |   _  \\   |  | 
+  |  '  /     /  ^  \\    |  |__|  | |  .--.  ||  |_)  |  |  | 
+  |    <     /  /_\\  \\   |   __   | |  |  |  ||      /   |  | 
+  |  .  \\   /  _____  \\  |  |  |  | |  '--'  ||  |\\  \\---|  | 
+  |__|\\__\\ /__/     \\__\\ |__|  |__| |_______/ | _| \\.____|__| 
                                                                                 
-   From the basement. https://basement.studio
+  On my way to the basement. https://basement.studio
 `
 
-// TODO: update this data
 export const defaultMeta = {
   title: 'Basement Supply',
   description: `Landing page for e-commerce site — Basement Challenge made by Justkahdri.`,

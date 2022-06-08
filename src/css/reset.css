@@ -27,7 +27,9 @@ body {
    */
 
 main {
-  display: block;
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
 }
 
 /**

@@ -13,7 +13,7 @@
     "build:analyze": "cross-env ANALYZE=true yarn build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx && stylelint '**/*.{css,scss}'",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx && stylelint **/*.{css,scss}",
     "tsc": "tsc --pretty --noEmit"
   },
   "dependencies": {
