@@ -99,7 +99,7 @@
 .price {
   display: flex;
   align-items: flex-end;
-  justify-content: end;
+  justify-content: flex-end;
   grid-area: price;
   font-size: 2.2rem;
   text-align: end;

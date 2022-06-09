@@ -1,5 +1,5 @@
 .floating {
-  --floating-size: 80px;
+  --floating-size: 100px;
   --floating-time: 14s;
 
   height: var(--floating-size);

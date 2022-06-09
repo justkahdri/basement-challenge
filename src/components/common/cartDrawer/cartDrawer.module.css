@@ -3,7 +3,9 @@
 }
 
 #cart-open-label:hover,
-#cart-close-label:hover {
+#cart-close-label:hover,
+#cart-open-label:focus,
+#cart-close-label:focus {
   color: orangered;
   border-color: orangered;
 }
@@ -51,7 +53,7 @@
 }
 
 #overlay {
-  position: absolute;
+  position: fixed;
   display: none;
   height: 100vh;
   width: 100vw;
@@ -82,6 +84,7 @@
 
 .cart-list > p {
   font-size: 2rem;
+  text-align: center;
 }
 
 .footer {

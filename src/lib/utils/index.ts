@@ -41,3 +41,11 @@ export const getSizes = (
 
   return sizes.join(', ')
 }
+
+export const parseCurrency = (value: number, fractionDigits = 2) =>
+  value.toLocaleString('en-US', {
+    style: 'currency',
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits,
+    currency: 'USD'
+  })
