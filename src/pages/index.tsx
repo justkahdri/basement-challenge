@@ -21,8 +21,9 @@ const HomePage = ({ products }: HomePageProps) => {
 }
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/products`)
-  const products = await res.json()
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/products`)
+  // const products = await res.json()
+  const products: BasementMerch[] = []
 
   if (!products) {
     return {
@@ -34,4 +35,5 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     props: { products }
   }
 }
+
 export default HomePage
