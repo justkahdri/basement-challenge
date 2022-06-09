@@ -5,6 +5,7 @@ import { AppProps } from 'next/app'
 import * as React from 'react'
 
 import { AppContextProvider } from '~/context/app'
+import { CartContextProvider } from '~/context/cart'
 import {
   basementLog,
   gaTrackingId,
@@ -73,7 +74,9 @@ const App = ({ Component, pageProps, ...rest }: AppProps) => {
     <>
       {gaTrackingId && <GAScripts />}
       <AppContextProvider>
-        {getLayout({ Component, pageProps, ...rest })}
+        <CartContextProvider>
+          {getLayout({ Component, pageProps, ...rest })}
+        </CartContextProvider>
       </AppContextProvider>
     </>
   )
