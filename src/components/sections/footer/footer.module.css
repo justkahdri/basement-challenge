@@ -1,0 +1,22 @@
+.footer {
+  /* stylelint-disable-next-line scss/no-global-function-names */
+  --relative-size: min(var(--full-wide-size), 330px);
+
+  padding: 0 20px;
+  display: flow-root;
+  max-width: var(--max-content-width);
+  margin: 10vh auto 0;
+  font-size: var(--relative-size);
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: end;
+}
+
+.rings {
+  display: inline-flex;
+  position: relative;
+  margin-right: 3rem;
+  margin-left: calc(var(--relative-size) * 0.6);
+  min-width: calc(var(--relative-size) * 1.4);
+  min-height: calc(var(--relative-size) * 0.8);
+}

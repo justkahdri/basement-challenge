@@ -8,6 +8,7 @@
   --inspect-color: #f00;
   --grey: #999;
   --full-wide-size: 14.4vw;
+  --max-content-width: 2000px;
 
   cursor: crosshair;
 

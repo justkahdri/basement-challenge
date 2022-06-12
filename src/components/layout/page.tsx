@@ -1,3 +1,4 @@
+import Footer from '~/components/sections/footer'
 import Header from '~/components/sections/header'
 
 import { Container, ContainerProps } from './container'
@@ -14,8 +15,7 @@ export const PageLayout = ({ children, contain }: Props) => {
       <main>
         {contain ? <Container {...contain}>{children}</Container> : children}
       </main>
-      {/* TODO Footer */}
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
