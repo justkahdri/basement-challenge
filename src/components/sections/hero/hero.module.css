@@ -46,6 +46,17 @@
   content: '2K19';
 }
 
+@media screen and (max-width: 768px) {
+  .title span::before,
+  .title span::after {
+    font-size: 1rem;
+  }
+
+  .title span {
+    line-height: 120%;
+  }
+}
+
 /* MARQUEE */
 .marquee_box {
   padding: 0.8rem 0;

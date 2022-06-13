@@ -50,7 +50,9 @@ const CartDrawer = () => {
           )}
         </ul>
         <footer className={styles.footer}>
-          <p className={styles.total}>TOTAL: {parseCurrency(totalCost)}</p>
+          <p className={styles.total}>
+            TOTAL: <span>{parseCurrency(totalCost)}</span>
+          </p>
           <button type="button" className={styles.checkout}>
             CHECKOUT
           </button>

@@ -45,3 +45,10 @@
   bottom: 0;
   font-size: 4rem;
 }
+
+@media screen and (max-width: 768px) {
+  .product {
+    height: 400px;
+    font-size: 1.8rem;
+  }
+}

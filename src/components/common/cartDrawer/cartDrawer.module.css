@@ -109,3 +109,47 @@
   -webkit-text-stroke: 0.5px white;
   color: transparent;
 }
+
+@media screen and (max-width: 768px) {
+  #drawer {
+    border: none;
+    width: 100vw;
+    height: 100vh;
+    right: -100vw;
+  }
+
+  .title {
+    line-height: 100%;
+    font-size: 12.5vw;
+  }
+
+  .footer {
+    margin: 0;
+    flex-direction: column;
+    width: 90%;
+    border: none;
+  }
+
+  .total {
+    padding: 1rem 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 2.2rem;
+  }
+
+  .checkout {
+    width: -webkit-fill-available;
+    border-left: none;
+    border-top: 3px solid rgb(255 255 255 / 0.2);
+    font-size: 13.5vw;
+    line-height: normal;
+    padding: 1.5rem 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .title {
+    font-size: 28vw;
+  }
+}

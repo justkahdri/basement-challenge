@@ -17,6 +17,15 @@
   position: relative;
   margin-right: 3rem;
   margin-left: calc(var(--relative-size) * 0.6);
-  min-width: calc(var(--relative-size) * 1.4);
-  min-height: calc(var(--relative-size) * 0.8);
+  width: calc(var(--relative-size) * 1.4);
+  height: calc(var(--relative-size) * 0.8);
+  min-height: 55px;
+  min-width: 90px;
+}
+
+@media screen and (max-width: 768px) {
+  .rings {
+    margin-left: 0;
+    margin-right: 2rem;
+  }
 }

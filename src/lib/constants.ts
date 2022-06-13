@@ -4,6 +4,12 @@ export const isProd = process.env.NODE_ENV === 'production'
 export const isClient = typeof document !== 'undefined'
 export const isServer = !isClient
 
+export enum BREAKPOINT {
+  mobile = 672,
+  tablet = 990,
+  desktop = 1296
+}
+
 if (typeof process.env.NEXT_PUBLIC_SITE_URL !== 'string') {
   throw new Error(
     `Please set the NEXT_PUBLIC_SITE_URL environment variable to your site's URL.

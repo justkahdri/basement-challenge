@@ -17,3 +17,9 @@
   position: relative;
   flex: 1;
 }
+
+@media screen and (max-width: 768px) {
+  .header h2 {
+    font-size: 4rem;
+  }
+}

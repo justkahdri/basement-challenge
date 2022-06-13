@@ -104,3 +104,24 @@
   font-size: 2.2rem;
   text-align: end;
 }
+
+@media screen and (max-width: 768px) {
+  .card {
+    --large-font-size: 1.8rem;
+    --std-font-size: 1.4rem;
+
+    height: fit-content;
+    grid-template-areas:
+      'image title title'
+      'image description description'
+      'image count count'
+      'image sizes sizes'
+      'image price price';
+  }
+
+  .price {
+    align-items: center;
+    justify-content: flex-start;
+    font-size: var(--std-font-size);
+  }
+}
