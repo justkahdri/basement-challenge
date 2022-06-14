@@ -4,8 +4,11 @@ type CartContextProps =
   | {
       products: Map<string, CartItemT>
       totalCost: number
+      isOpen: boolean
       setCartProduct: (name: string, values: CartItemT) => void
       removeCartProduct: (name: string) => void
+      displayCart: VoidFunction
+      toggleCart: VoidFunction
     }
   | undefined
 
@@ -17,6 +20,7 @@ export const CartContextProvider: React.FC = ({ children }) => {
   )
   const [totalCost, setTotalCost] = React.useState(0)
   const [loadedStorage, setLoadedStorage] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false)
 
   React.useEffect(() => {
     const cartFromStorage = window.localStorage.getItem('cart')
@@ -54,9 +58,25 @@ export const CartContextProvider: React.FC = ({ children }) => {
     })
   }
 
+  function displayCart() {
+    setIsOpen(true)
+  }
+
+  function toggleCart() {
+    setIsOpen((isOpen) => !isOpen)
+  }
+
   return (
     <CartContext.Provider
-      value={{ products, setCartProduct, removeCartProduct, totalCost }}
+      value={{
+        products,
+        setCartProduct,
+        removeCartProduct,
+        totalCost,
+        displayCart,
+        toggleCart,
+        isOpen
+      }}
     >
       {children}
     </CartContext.Provider>

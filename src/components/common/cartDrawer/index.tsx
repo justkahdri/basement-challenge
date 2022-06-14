@@ -7,11 +7,13 @@ import styles from './cartDrawer.module.css'
 import CartItem from './cartItem'
 
 const CartDrawer = () => {
-  const { products, totalCost } = useCartContext()
+  const { products, totalCost, isOpen, toggleCart } = useCartContext()
 
   return (
     <>
       <input
+        checked={isOpen}
+        onChange={toggleCart}
         type="checkbox"
         tabIndex={0}
         className="cartToggle"

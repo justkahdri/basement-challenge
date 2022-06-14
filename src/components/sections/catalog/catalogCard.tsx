@@ -8,19 +8,18 @@ import styles from './Card.module.css'
 
 const catalogCard = (props: BasementMerch) => {
   const { name, price, previewUrl } = props
-  const { setCartProduct, products } = useCartContext()
+  const { setCartProduct, products, displayCart } = useCartContext()
   const [showOverlay, setShowOverlay] = useState(false)
 
   const addToCart = () =>
     setCartProduct(name, { ...props, count: 1, size: 'M' })
 
   const handleClick = () => {
-    if (products.has(name)) {
-      // TODO Implement multiple sizes option
-      alert('You already have this product on cart!')
-    } else {
+    if (!products.has(name)) {
       addToCart()
+      // TODO Implement multiple sizes option
     }
+    displayCart()
   }
 
   const handleOverlay: MouseEventHandler = (e) => {
@@ -50,10 +49,12 @@ const catalogCard = (props: BasementMerch) => {
           className={styles.overlay}
           style={showOverlay ? { display: 'flex' } : {}}
         >
-          <span className="outline">ADD TO CART</span>
+          <span className="outline">
+            {products.has(name) ? 'BUY ME' : 'ADD TO CART'}
+          </span>
         </div>
       </figure>
-      <h5>{name}</h5>
+      <h3>{name}</h3>
       <span>{parseCurrency(price)}</span>
     </article>
   )
