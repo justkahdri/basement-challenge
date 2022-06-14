@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React, { MouseEventHandler, useState } from 'react'
 
 import { useCartContext } from '~/context/cart'
-import { parseCurrency } from '~/lib/utils'
+import { parseCurrency, SIZE } from '~/lib/utils'
 
 import styles from './Card.module.css'
 
@@ -12,7 +12,7 @@ const catalogCard = (props: BasementMerch) => {
   const [showOverlay, setShowOverlay] = useState(false)
 
   const addToCart = () =>
-    setCartProduct(name, { ...props, count: 1, size: 'M' })
+    setCartProduct(name, { ...props, count: 1, size: SIZE.M })
 
   const handleClick = () => {
     if (!products.has(name)) {

@@ -1,5 +1,12 @@
 import { isClient } from '~/lib/constants'
 
+export enum SIZE {
+  S = 'S',
+  M = 'M',
+  L = 'L',
+  XL = 'XL'
+}
+
 export const formatError = (
   error: unknown
 ): { message: string; name?: string } => {

@@ -1,34 +1,44 @@
 import Image from 'next/image'
-import React, { useRef } from 'react'
+import React, { ChangeEventHandler, FocusEventHandler, useState } from 'react'
 
 import { useCartContext } from '~/context/cart'
-import { parseCurrency } from '~/lib/utils'
+import { parseCurrency, SIZE } from '~/lib/utils'
 
 import styles from './cartItem.module.css'
 
 const CartItem = (props: CartItemT) => {
   const { setCartProduct, removeCartProduct } = useCartContext()
   const sizes = ['S', 'M', 'L', 'XL']
-  const countInput = useRef<any>()
+  const [count, setCount] = useState(props.count)
 
-  const increaseCount = () => {
-    const valueStr = countInput.current.value
-    countInput.current.value = String(Number(valueStr) + 1)
-    updateCount(countInput.current.value)
+  const updateProduct = (newValues: Partial<CartItemT>) => {
+    setCartProduct(props.name, { ...props, ...newValues })
   }
 
-  const decreaseCount = () => {
-    const valueStr = countInput.current.value
-    countInput.current.value = String(Number(valueStr) - 1)
-    updateCount(countInput.current.value)
-  }
-
-  const updateCount = (count: number) => {
-    if (count > 0) {
-      setCartProduct(props.name, { ...props, count })
+  const applyCount = (difference: number) => {
+    const newCount = count + difference
+    if (newCount > 0) {
+      setCount(newCount)
+      updateProduct({ count: newCount })
     } else {
       removeCartProduct(props.name)
     }
+  }
+
+  const handleCount: FocusEventHandler<HTMLInputElement> = ({
+    target: { value }
+  }) => {
+    const integer = parseInt(value)
+    if (integer > 0) {
+      setCount(integer)
+    } else {
+      setCount(1)
+    }
+  }
+
+  const handleSize: ChangeEventHandler<HTMLInputElement> = (event) => {
+    const selectedSize = event.target.value as SIZE
+    updateProduct({ size: selectedSize })
   }
 
   return (
@@ -38,8 +48,6 @@ const CartItem = (props: CartItemT) => {
           alt={props.name}
           src={props.previewUrl}
           layout="fill"
-          height="100%"
-          width="100%"
           objectFit="contain"
         />
       </figure>
@@ -50,17 +58,26 @@ const CartItem = (props: CartItemT) => {
           QUANTITY:
         </label>
         <div className={styles['count-input-group']}>
-          <button type="button" onClick={decreaseCount}>
+          <button
+            type="button"
+            onClick={() => applyCount(-1)}
+            onDoubleClick={() => applyCount(-4)}
+          >
             -
           </button>
           <input
             id="count"
             type="number"
-            defaultValue={props.count}
+            onChange={({ target }) => setCount(Number(target.value))}
             className={styles['count-input']}
-            ref={countInput}
+            value={count}
+            onBlur={handleCount}
           />
-          <button type="button" onClick={increaseCount}>
+          <button
+            type="button"
+            onClick={() => applyCount(1)}
+            onDoubleClick={() => applyCount(4)}
+          >
             +
           </button>
         </div>
@@ -74,6 +91,7 @@ const CartItem = (props: CartItemT) => {
             id={`${size}-${props.name}`}
             name={`sizes-${props.name}`}
             value={size}
+            onChange={handleSize}
             defaultChecked={props.size == size}
           />,
           <label key={`label-${size}`} htmlFor={`${size}-${props.name}`}>

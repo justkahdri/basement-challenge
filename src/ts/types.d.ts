@@ -1,3 +1,4 @@
+import { SIZE } from '~/lib/utils'
 declare global {
   interface BasementMerch {
     name: string
@@ -8,7 +9,7 @@ declare global {
 
   interface CartItemT extends BasementMerch {
     count: number
-    size: 'S' | 'M' | 'L' | 'XL'
+    size: SIZE
   }
 }
 
