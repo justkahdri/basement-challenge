@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import { useCartContext } from '~/context/cart'
 import { parseCurrency } from '~/lib/utils'
@@ -8,6 +8,19 @@ import CartItem from './cartItem'
 
 const CartDrawer = () => {
   const { products, totalCost, isOpen, toggleCart } = useCartContext()
+  const checkoutText = useMemo(
+    () =>
+      Array.from(products.values())
+        .reduce(
+          (message, product) =>
+            message.concat(`* ${product.name} - ${product.price}\n`),
+          ''
+        )
+        .concat(
+          `\nTOTAL: ${parseCurrency(totalCost)}\n\nHELLO FROM THE BASEMENT.`
+        ),
+    [products, totalCost]
+  )
 
   return (
     <>
@@ -55,9 +68,15 @@ const CartDrawer = () => {
           <p className={styles.total}>
             TOTAL: <span>{parseCurrency(totalCost)}</span>
           </p>
-          <button type="button" className={styles.checkout}>
-            CHECKOUT
-          </button>
+          <a
+            target="_blank"
+            href={`https://wa.me/541161050513?text=${encodeURI(checkoutText)}`}
+            rel="noopener noreferrer"
+          >
+            <button type="button" className={styles.checkout}>
+              CHECKOUT
+            </button>
+          </a>
         </footer>
       </aside>
     </>
